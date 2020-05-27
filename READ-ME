@@ -1,0 +1,32 @@
+#Project 3: due on June 10 (by end of the day)
+  Glycolysis is the biochemical process by which living cells break down sugars to release
+  energy, which is used to form Adenosine Triphosphate (ATP). The complete glycolytic pathway
+  is a complex series of ten enzyme-catalyzed reactions, involving intermediates that are
+  derivatives of common sugars like fructose and glucose. Here, we wish to examine glycolytic
+  oscillations that arise is one of these intermediate processes that relate ATP and Fructose-6-
+  phosphate (F6P).
+  By measuring the concentrations of ATP and F6P in yeast and muscle extracts, scientists have
+  demonstrated that their rates of change depend nonlinearly on the current concentration of the
+  other. A simplified model for this part of glycolysis is:
+      d[ATP]/dt = − [ATP] + a[F6P] + [ATP]^2[F6P]
+      d[F6P]/dt = b − a[F6P] − [ATP]^2[F6P]
+      
+    where square brackets denote concentrations (typically detected by proxy using fluorescence).
+    Here, and are kinetic constants that depend on other intermediates and external factors like
+    the temperature. For simplicity, we will assume that all terms are in dimensionless units.
+    
+      a) Numerically solve the system of ODEs for a = 0.05 and b = 1.2 until if the initial
+         concentrations are [ATP] = 1 and [F6P] = 1 . Plot this solution with correct labels. Does
+         the eventual steady state concentration depend on initial conditions?
+      b)  Experiments often observe the so-called ‘glycolytic oscillator’ where the concentrations
+          oscillate for several minutes. Use the same initial conditions as part (a) with constant a = 0.05. 
+           However,b = 1.2 in the beginning like before but changes to b = 0.8 at t=30. Solve and plot the concentrations up to
+           t=100.
+      c) The kinetic parameters are often not constant, and change continuously depending on the
+         surrounding environment, temperature, and other intermediate products. In a particular
+         case, let’s say you discover that while (a) is mostly a constant, the parameter (b) changes
+         continuously with time as follows:
+                  db/dt = − 0.1[F6P][ATP]e^(−1/b)
+        
+            Now solve and plot the concentrations of ATP and F6P up to t = 100 if a = 0.05 and the
+            initial values are [ATP] =1 , [F6P] = 1 and b =1.
